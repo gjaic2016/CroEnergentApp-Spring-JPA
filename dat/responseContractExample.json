@@ -1,0 +1,144 @@
+[
+  {
+    "id": 1,
+    "tip": "FIXED",
+    "pruzateljUsluge": {
+      "id": 6,
+      "naziv": "MetalGrad",
+      "adresa": "Jarun bb",
+      "vrstaUsluge": "ELECTRICITY_SUPPLY",
+      "cijenaUsluge": 233.45
+    },
+    "kucanstvo": {
+      "id": 1,
+      "adresa": "Velebitska 33",
+      "vlasnik": {
+        "id": 1,
+        "ime": "Ivo",
+        "prezime": "Ivic",
+        "datumRodenja": "1990-02-19",
+        "oib": "19823245234"
+      }
+    },
+    "contractStart": "2011-05-12",
+    "contractEnd": "2012-02-12"
+  },
+  {
+    "id": 2,
+    "tip": "INDEFINITE",
+    "pruzateljUsluge": {
+      "id": 6,
+      "naziv": "MetalGrad",
+      "adresa": "Jarun bb",
+      "vrstaUsluge": "ELECTRICITY_SUPPLY",
+      "cijenaUsluge": 233.45
+    },
+    "kucanstvo": {
+      "id": 2,
+      "adresa": "Ninska 11",
+      "vlasnik": {
+        "id": 2,
+        "ime": "Grga",
+        "prezime": "Grgic",
+        "datumRodenja": "1991-05-20",
+        "oib": "24523419823"
+      }
+    },
+    "contractStart": "2013-05-12"
+  },
+  {
+    "id": 3,
+    "tip": "FIXED",
+    "pruzateljUsluge": {
+      "id": 3,
+      "naziv": "Jugoplastika",
+      "adresa": "Smičiklasova 2",
+      "vrstaUsluge": "GAS_SUPPLY",
+      "cijenaUsluge": 1411.45
+    },
+    "kucanstvo": {
+      "id": 3,
+      "adresa": "Savska 101",
+      "vlasnik": {
+        "id": 3,
+        "ime": "Marko",
+        "prezime": "Markic",
+        "datumRodenja": "1996-06-10",
+        "oib": "24523419333"
+      }
+    },
+    "contractStart": "2011-05-12",
+    "contractEnd": "2012-05-12"
+  },
+  {
+    "id": 4,
+    "tip": "INDEFINITE",
+    "pruzateljUsluge": {
+      "id": 16,
+      "naziv": "Veleradnja",
+      "adresa": "Grgina 14",
+      "vrstaUsluge": "ELECTRICITY_SUPPLY",
+      "cijenaUsluge": 333.45
+    },
+    "kucanstvo": {
+      "id": 4,
+      "adresa": "Knezija 13",
+      "vlasnik": {
+        "id": 4,
+        "ime": "Pero",
+        "prezime": "Peric",
+        "datumRodenja": "1977-06-11",
+        "oib": "24523413452"
+      }
+    },
+    "contractStart": "2022-03-11"
+  },
+  {
+    "id": 5,
+    "tip": "FIXED",
+    "pruzateljUsluge": {
+      "id": 2,
+      "naziv": "Jugoplastika",
+      "adresa": "Smičiklasova 2",
+      "vrstaUsluge": "WATER_SUPPLY",
+      "cijenaUsluge": 233
+    },
+    "kucanstvo": {
+      "id": 5,
+      "adresa": "Lila 27",
+      "vlasnik": {
+        "id": 5,
+        "ime": "Bobo",
+        "prezime": "Bobic",
+        "datumRodenja": "1987-04-12",
+        "oib": "24523466652"
+      }
+    },
+    "contractStart": "2000-05-12",
+    "contractEnd": "2000-02-12"
+  },
+  {
+    "id": 6,
+    "tip": "FIXED",
+    "pruzateljUsluge": {
+      "id": 2,
+      "naziv": "Jugoplastika",
+      "adresa": "Smičiklasova 2",
+      "vrstaUsluge": "WATER_SUPPLY",
+      "cijenaUsluge": 233
+    },
+    "kucanstvo": {
+      "id": 1,
+      "adresa": "Velebitska 33",
+      "vlasnik": {
+        "id": 1,
+        "ime": "Ivo",
+        "prezime": "Ivic",
+        "datumRodenja": "1990-02-19",
+        "oib": "19823245234"
+      }
+    },
+    "contractStart": "2022-06-12",
+    "contractEnd": "2023-07-12"
+  }
+]
