@@ -41,53 +41,53 @@ public class FileContractRepository implements ContractRepositoryInterface {
             throw new RuntimeException(e);
         }
 
-        for (int i = 0; i < lines.size() / NUMBER_OF_CONTRACT_LINES; i++) {
-
-            Integer contractId = Integer.parseInt(lines.get(i * NUMBER_OF_CONTRACT_LINES));             //line 0 id
-
-            String contractType = lines.get(i * NUMBER_OF_CONTRACT_LINES + 1);                          //line 1 type
-
-            Integer serviceProviderId = Integer.parseInt(lines.get(i * NUMBER_OF_CONTRACT_LINES + 2));  //line 2 SProvider
-            List<ServiceProvider> serviceProviderList = serviceProviderRepositoryInterface.getAllServiceProviders();
-            ServiceProvider serviceProviderOfContract = null;
-            for (ServiceProvider serviceProvider : serviceProviderList) {
-                if (serviceProvider.getId().equals(serviceProviderId)) {
-                    serviceProviderOfContract = serviceProvider;
-                }
-            }
-
-            Integer householdId = Integer.parseInt(lines.get(i * NUMBER_OF_CONTRACT_LINES + 3));        //line 3 household
-            List<Household> householdList = householdRepositoryInterface.getAllHouseholds();
-            Household householdOfContract = null;
-
-            for (Household house : householdList) {
-                if (house.getId().equals(householdId)) {
-                    householdOfContract = house;
-                }
-            }
-
-            Contract newContract;
-
-            if (contractType.equals("FIXED")) {
-
-                String contractStartString = lines.get(i * NUMBER_OF_CONTRACT_LINES + 4);
-                LocalDate contractStart = LocalDateUtility.convertStringToLocalDate(contractStartString);
-
-                String contractEndString = lines.get(i * NUMBER_OF_CONTRACT_LINES + 5);
-                LocalDate contractEnd = LocalDateUtility.convertStringToLocalDate(contractEndString);
-
-
-                newContract = new FixedTermContract(contractId, contractType, serviceProviderOfContract, householdOfContract,
-                        contractStart, contractEnd);
-            } else {
-                String contractStartString = lines.get(i * NUMBER_OF_CONTRACT_LINES + 4);
-                LocalDate contractStart = LocalDateUtility.convertStringToLocalDate(contractStartString);
-
-                newContract = new IndefiniteContract(contractId, contractType, serviceProviderOfContract, householdOfContract, contractStart);
-            }
-
-            contractList.add(newContract);
-        }
+//        for (int i = 0; i < lines.size() / NUMBER_OF_CONTRACT_LINES; i++) {
+//
+//            Integer contractId = Integer.parseInt(lines.get(i * NUMBER_OF_CONTRACT_LINES));             //line 0 id
+//
+//            String contractType = lines.get(i * NUMBER_OF_CONTRACT_LINES + 1);                          //line 1 type
+//
+//            Integer serviceProviderId = Integer.parseInt(lines.get(i * NUMBER_OF_CONTRACT_LINES + 2));  //line 2 SProvider
+//            List<ServiceProvider> serviceProviderList = serviceProviderRepositoryInterface.getAllServiceProviders();
+//            ServiceProvider serviceProviderOfContract = null;
+//            for (ServiceProvider serviceProvider : serviceProviderList) {
+//                if (serviceProvider.getId().equals(serviceProviderId)) {
+//                    serviceProviderOfContract = serviceProvider;
+//                }
+//            }
+//
+//            Integer householdId = Integer.parseInt(lines.get(i * NUMBER_OF_CONTRACT_LINES + 3));        //line 3 household
+//            List<Household> householdList = householdRepositoryInterface.getAllHouseholds();
+//            Household householdOfContract = null;
+//
+//            for (Household house : householdList) {
+//                if (house.getId().equals(householdId)) {
+//                    householdOfContract = house;
+//                }
+//            }
+//
+//            Contract newContract;
+//
+//            if (contractType.equals("FIXED")) {
+//
+//                String contractStartString = lines.get(i * NUMBER_OF_CONTRACT_LINES + 4);
+//                LocalDate contractStart = LocalDateUtility.convertStringToLocalDate(contractStartString);
+//
+//                String contractEndString = lines.get(i * NUMBER_OF_CONTRACT_LINES + 5);
+//                LocalDate contractEnd = LocalDateUtility.convertStringToLocalDate(contractEndString);
+//
+//
+//                newContract = new FixedTermContract(contractId, contractType, serviceProviderOfContract, householdOfContract,
+//                        contractStart, contractEnd);
+//            } else {
+//                String contractStartString = lines.get(i * NUMBER_OF_CONTRACT_LINES + 4);
+//                LocalDate contractStart = LocalDateUtility.convertStringToLocalDate(contractStartString);
+//
+//                newContract = new IndefiniteContract(contractId, contractType, serviceProviderOfContract, householdOfContract, contractStart);
+//            }
+//
+//            contractList.add(newContract);
+//        }
 
         return contractList;
     }

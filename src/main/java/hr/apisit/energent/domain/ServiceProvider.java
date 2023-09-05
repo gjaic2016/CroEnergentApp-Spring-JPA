@@ -13,11 +13,11 @@ public class ServiceProvider {
 
     private Integer id;
     private String naziv;
-    private String adresa;
-    private ServiceType vrstaUsluge;
+    private Integer adresa;
+    private Integer vrstaUsluge;
     private BigDecimal cijenaUsluge;
 
-    public ServiceProvider(Integer id, String naziv, String adresa, ServiceType vrstaUsluge, BigDecimal cijenaUsluge) {
+    public ServiceProvider(Integer id, String naziv, Integer adresa, Integer vrstaUsluge, BigDecimal cijenaUsluge) {
         this.id = id;
         this.naziv = naziv;
         this.adresa = adresa;
