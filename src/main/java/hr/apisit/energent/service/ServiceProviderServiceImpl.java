@@ -20,7 +20,7 @@ public class ServiceProviderServiceImpl implements ServiceProviderService{
     }
 
     @Override
-    public Optional<ServiceProvider> getServiceProviderById(Integer id) {
+    public ServiceProvider getServiceProviderById(Integer id) {
         return serviceProviderRepositoryInterface.getServiceProviderById(id);
     }
 
@@ -30,7 +30,7 @@ public class ServiceProviderServiceImpl implements ServiceProviderService{
     }
 
     @Override
-    public Optional<ServiceProvider> updateServiceProvider(ServiceProvider updatedServiceProvider, Integer id) {
+    public ServiceProvider updateServiceProvider(ServiceProvider updatedServiceProvider, Integer id) {
          return serviceProviderRepositoryInterface.updateServiceProvider(updatedServiceProvider,id);
     }
 

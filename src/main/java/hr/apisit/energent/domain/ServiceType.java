@@ -1,21 +1,17 @@
 package hr.apisit.energent.domain;
 
-public enum ServiceType {
+import lombok.Getter;
+import lombok.Setter;
 
-    ELECTRICITY_SUPPLY("Electricity supply"),
-    WATER_SUPPLY("Water supply"),
-    GAS_SUPPLY("Gas supply"),
-    INTERNET_SUPPLY("Internet supply"),
-    GARBAGE_COLLECTION("Garbage collection");
+@Getter
+@Setter
+public class ServiceType {
 
-    private String serviceName;
+    private Integer id;
+    private String naziv;
 
-    ServiceType(String serviceName) {
-        this.serviceName = serviceName;
+    public ServiceType(Integer id, String naziv) {
+        this.id = id;
+        this.naziv = naziv;
     }
-
-    public String getServiceName() {
-        return serviceName;
-    }
-
 }

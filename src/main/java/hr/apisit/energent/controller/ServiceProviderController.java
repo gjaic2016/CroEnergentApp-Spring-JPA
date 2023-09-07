@@ -24,13 +24,15 @@ public class ServiceProviderController {
     @GetMapping("/{id}")
     @ResponseBody
     public ResponseEntity<?> getServiceProviderById(@PathVariable Integer id){
-        Optional<ServiceProvider> optionalServiceProvider = serviceProviderService.getServiceProviderById(id);
+        ServiceProvider optionalServiceProvider = serviceProviderService.getServiceProviderById(id);
 
-        if(optionalServiceProvider.isPresent()){
-            return ResponseEntity.status(HttpStatus.OK).body(optionalServiceProvider.get());
-        } else {
-            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
-        }
+//        if(optionalServiceProvider.isPresent()){
+//            return ResponseEntity.status(HttpStatus.OK).body(optionalServiceProvider.get());
+//        } else {
+//            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+//        }
+            return ResponseEntity.status(HttpStatus.OK).body(optionalServiceProvider);
+
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -42,14 +44,14 @@ public class ServiceProviderController {
     @PutMapping("/{id}")
     @ResponseBody
     public ResponseEntity<?> updateServiceProvider(@RequestBody ServiceProvider updatedSProvider, @PathVariable Integer id){
-        Optional<ServiceProvider> updatedServiceProviderOptional =
+        ServiceProvider updatedServiceProviderOptional =
                 serviceProviderService.updateServiceProvider(updatedSProvider, id);
 
-        if(updatedServiceProviderOptional.isPresent()){
-            return ResponseEntity.status(HttpStatus.OK).body(updatedServiceProviderOptional.get());
-        } else {
-            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
-        }
+            return ResponseEntity.status(HttpStatus.OK).body(updatedServiceProviderOptional);
+//        if(updatedServiceProviderOptional.isPresent()){
+//        } else {
+//            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+//        }
     }
 
     @DeleteMapping("/{id}")

@@ -1,10 +1,7 @@
 package hr.apisit.energent.controller;
 
 import hr.apisit.energent.domain.Owner;
-import hr.apisit.energent.domain.ServiceProvider;
-import hr.apisit.energent.domain.ServiceType;
 import hr.apisit.energent.utility.JsonUtils;
-import hr.apisit.energent.utility.LocalDateUtility;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -15,7 +12,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import static org.hamcrest.Matchers.hasSize;

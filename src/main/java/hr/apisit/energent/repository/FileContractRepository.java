@@ -24,7 +24,7 @@ public class FileContractRepository implements ContractRepositoryInterface {
     public static final String CONTRACTS_FILE_NAME = "dat/contracts.txt";
     public static final String TEST_CONTRACTS_FILE_NAME = "dat/testContracts.txt";
 
-    private ServiceProviderRepositoryInterface serviceProviderRepositoryInterface;
+//    private ServiceProviderRepositoryInterface serviceProviderRepositoryInterface;
 
     private HouseholdRepositoryInterface householdRepositoryInterface;
 

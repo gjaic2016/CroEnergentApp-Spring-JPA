@@ -9,11 +9,11 @@ public interface ServiceProviderRepositoryInterface {
 
     List<ServiceProvider> getAllServiceProviders();
 
-    Optional<ServiceProvider> getServiceProviderById(Integer id);
+    ServiceProvider getServiceProviderById(Integer id);
 
     void saveNewServiceProvide(ServiceProvider newServiceProvider);
 
-    Optional<ServiceProvider> updateServiceProvider(ServiceProvider updatedServiceProvider, Integer id);
+    ServiceProvider updateServiceProvider(ServiceProvider updatedServiceProvider, Integer id);
 
     void deleteServiceProvider(Integer id);
 }

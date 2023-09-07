@@ -1,14 +1,8 @@
-/*
 package hr.apisit.energent.repository;
 
 import hr.apisit.energent.domain.ServiceProvider;
-import hr.apisit.energent.domain.ServiceType;
-import org.springframework.stereotype.Repository;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -57,8 +51,9 @@ public class FileServiceProviderRepository implements ServiceProviderRepositoryI
     }
 
     @Override
-    public Optional<ServiceProvider> getServiceProviderById(Integer id) {
-        return getAllServiceProviders().stream().filter(f -> f.getId().equals(id)).findFirst();
+    public ServiceProvider getServiceProviderById(Integer id) {
+//        return getAllServiceProviders().stream().filter(f -> f.getId().equals(id)).findFirst();
+        return null;
     }
 
     @Override
@@ -100,10 +95,10 @@ public class FileServiceProviderRepository implements ServiceProviderRepositoryI
     }
 
     @Override
-    public Optional<ServiceProvider> updateServiceProvider(ServiceProvider updatedServiceProvider, Integer id) {
+    public ServiceProvider updateServiceProvider(ServiceProvider updatedServiceProvider, Integer id) {
         List<ServiceProvider> serviceProvidersList = getAllServiceProviders();
 
-        Optional updatedServiceProviderOptional = Optional.empty();
+        ServiceProvider updatedServiceProviderOptional = null;
 
         for(ServiceProvider provider : serviceProvidersList) {
             if(provider.getId().equals(id)) {
@@ -112,14 +107,14 @@ public class FileServiceProviderRepository implements ServiceProviderRepositoryI
                 provider.setVrstaUsluge(updatedServiceProvider.getVrstaUsluge());
                 provider.setCijenaUsluge(updatedServiceProvider.getCijenaUsluge());
 
-                updatedServiceProviderOptional = Optional.of(provider);
+                updatedServiceProviderOptional = provider;
                 break;
             }
         }
 
-        if(updatedServiceProviderOptional.isPresent()) {
+//        if(updatedServiceProviderOptional.isPresent()) {
+//        }
             saveAllServiceProvidersToFile(serviceProvidersList);
-        }
 
         return updatedServiceProviderOptional;
     }
@@ -138,4 +133,3 @@ public class FileServiceProviderRepository implements ServiceProviderRepositoryI
         }
     }
 }
-*/

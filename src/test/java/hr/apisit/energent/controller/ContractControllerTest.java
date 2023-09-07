@@ -78,7 +78,7 @@ public class ContractControllerTest {
                 testOwner);
 
         ServiceProvider testServiceProvider = new ServiceProvider(2, "Jugoplastika",
-                "Smičiklasova 2", ServiceType.WATER_SUPPLY, new BigDecimal(233));
+                "Smičiklasova 2", ServiceType2.WATER_SUPPLY, new BigDecimal(233));
 
         Contract testContract = new FixedTermContract(6, "FIXED", testServiceProvider,
                 testHousehold ,contractStart,contractEnd);
@@ -128,7 +128,7 @@ public class ContractControllerTest {
                 testOwner);
 
         ServiceProvider testServiceProvider = new ServiceProvider(2, "Jugoplastika",
-                "Smičiklasova 2", ServiceType.WATER_SUPPLY, new BigDecimal(233));
+                "Smičiklasova 2", ServiceType2.WATER_SUPPLY, new BigDecimal(233));
 
         Contract testContract = new FixedTermContract(CONTRACT_ID, "FIXED", testServiceProvider,
                 testHousehold ,contractStart,contractEnd);

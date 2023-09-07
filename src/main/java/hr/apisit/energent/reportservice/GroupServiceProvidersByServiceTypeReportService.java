@@ -1,7 +1,7 @@
 package hr.apisit.energent.reportservice;
 
 import hr.apisit.energent.domain.ServiceProvider;
-import hr.apisit.energent.domain.ServiceType;
+import hr.apisit.energent.domain.ServiceType2;
 import hr.apisit.energent.repository.ServiceProviderRepositoryInterface;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -17,15 +17,15 @@ public class GroupServiceProvidersByServiceTypeReportService implements GroupSer
     private ServiceProviderRepositoryInterface serviceProviderRepositoryInterface;
 
     @Override
-    public Map<ServiceType, List<ServiceProvider>> getGroupedSProvidersByServiceType() {
+    public Map<ServiceType2, List<ServiceProvider>> getGroupedSProvidersByServiceType() {
 
         List<ServiceProvider> serviceProviderList = serviceProviderRepositoryInterface.getAllServiceProviders();
 
-        Map<ServiceType, List<ServiceProvider>> mapaUslugaPoTipu = new HashMap<>();
+        Map<ServiceType2, List<ServiceProvider>> mapaUslugaPoTipu = new HashMap<>();
 
         List<ServiceProvider> groupedProviders;
 
-        for (ServiceType type : ServiceType.values()) {
+        for (ServiceType2 type : ServiceType2.values()) {
             groupedProviders = new ArrayList<>();
             for (ServiceProvider provider : serviceProviderList) {
                 if (type.equals(provider.getVrstaUsluge())) {

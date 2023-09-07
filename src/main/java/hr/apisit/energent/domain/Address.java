@@ -11,9 +11,9 @@ public class Address {
 
     private String address;
 
-    private Integer city;
+    private City city;
 
-    public Address(Integer id, String address, Integer city) {
+    public Address(Integer id, String address, City city) {
         this.id = id;
         this.address = address;
         this.city = city;

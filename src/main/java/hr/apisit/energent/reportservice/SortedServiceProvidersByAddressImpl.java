@@ -28,7 +28,7 @@ public class SortedServiceProvidersByAddressImpl implements SortedServiceProvide
         List<ServiceProvider> providersDistinctByName = serviceProviderList.stream()
                 .filter(e -> nameSet.add(e.getNaziv()))
                 .collect(Collectors.toList());
-        providersDistinctByName.sort(Comparator.comparing(ServiceProvider::getAdresa));
+//        providersDistinctByName.sort(Comparator.comparing(ServiceProvider::getAdresa));
 
         return providersDistinctByName;
     }
