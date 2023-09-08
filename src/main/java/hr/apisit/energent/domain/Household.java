@@ -4,24 +4,22 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.List;
+
 @Getter
 @Setter
 @ToString
-public class Household implements Comparable<Household> {
+public class Household  {
 
     private Integer id;
     private String adresa;
-    private Owner vlasnik;
+    private List<Owner> vlasnik;
 
-    public Household(Integer id, String adresa, Owner vlasnik) {
+    public Household(Integer id, String adresa, List<Owner> vlasnik) {
         this.id = id;
         this.adresa = adresa;
         this.vlasnik = vlasnik;
     }
 
-    @Override
-    public int compareTo(Household o) {
-        return this.getVlasnik().getPrezime().compareTo(o.getVlasnik().getPrezime());
-    }
 
 }
