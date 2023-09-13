@@ -1,10 +1,8 @@
 package hr.apisit.energent.jdbcrepository;
 
 import hr.apisit.energent.domain.Household;
-import hr.apisit.energent.domain.ServiceProvider;
 import hr.apisit.energent.repository.HouseholdRepositoryInterface;
 import hr.apisit.energent.rowmapper.HouseholdRowMapper;
-import hr.apisit.energent.rowmapper.ServiceProviderRowMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -31,7 +29,6 @@ public class JdbcHouseholdRepository implements HouseholdRepositoryInterface {
         Household household =
                 jdbcTemplate.queryForObject("SELECT * FROM HOUSEHOLD WHERE ID = ?",
                         new HouseholdRowMapper(jdbcTemplate), id);
-
         return Optional.of(household);
     }
 
@@ -45,7 +42,8 @@ public class JdbcHouseholdRepository implements HouseholdRepositoryInterface {
         jdbcTemplate.update("UPDATE HOUSEHOLD SET ADDRESS = ? WHERE ID = ?",
                 updatedHousehold.getAdresa(), id);
 
-        return Optional.empty();
+        Optional<Household> newUpdatedHousehold = getHouseholdById(id);
+        return newUpdatedHousehold;
     }
 
     @Override

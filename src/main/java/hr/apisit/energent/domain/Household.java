@@ -1,18 +1,32 @@
 package hr.apisit.energent.domain;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.List;
 
-@Getter
-@Setter
-@ToString
+//@Getter
+//@Setter
+//@ToString
+@Entity
+@Table(name = "HOUSEHOLD")
+@Data
+@NoArgsConstructor
 public class Household  {
 
+    @Id
+    @GeneratedValue(strategy =  GenerationType.IDENTITY )
     private Integer id;
+
+    @Column(name = "ADDRESS")
     private String adresa;
+
+    @ManyToMany
+    @JoinTable(
+            name = "HOUSEHOLD_OWNER",
+            joinColumns = @JoinColumn(name = "HOUSEHOLD_ID"),
+            inverseJoinColumns = @JoinColumn (name = "OWNER_ID")
+    )
     private List<Owner> vlasnik;
 
     public Household(Integer id, String adresa, List<Owner> vlasnik) {
@@ -20,6 +34,5 @@ public class Household  {
         this.adresa = adresa;
         this.vlasnik = vlasnik;
     }
-
 
 }

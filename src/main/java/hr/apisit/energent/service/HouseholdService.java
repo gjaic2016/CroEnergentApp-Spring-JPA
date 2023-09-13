@@ -16,6 +16,8 @@ public interface HouseholdService {
 
     Optional<Household> updateHousehold(Household updatedHousehold, Integer id);
 
-    void deleteHousehold(Integer id);
+//    void deleteHousehold(Integer id);
+
+    void deleteHousehold(Household household);
 
 }

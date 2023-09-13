@@ -56,7 +56,7 @@ public class HouseholdController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteHousehold(@PathVariable Integer id){
-        householdService.deleteHousehold(id);
+        householdService.deleteHousehold(householdService.getHouseholdById(id).get());
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 }

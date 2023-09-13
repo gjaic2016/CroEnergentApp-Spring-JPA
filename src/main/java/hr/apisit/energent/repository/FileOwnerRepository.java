@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-@Repository
+//@Repository
 public class FileOwnerRepository implements OwnerRepositoryInterface{
 
     public static final Integer NUMBER_OF_OWNER_DATA_LINES = 5;
