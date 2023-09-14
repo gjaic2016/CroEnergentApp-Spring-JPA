@@ -12,7 +12,7 @@ public interface AddressService {
 
     Optional<Address> getAddressById(Integer id);
 
-    void saveAddress(Address newCity);
+    void saveAddress(Address newAddress);
 
     Optional<Address> updateAddress(Address updatedAddress, Integer id);
 

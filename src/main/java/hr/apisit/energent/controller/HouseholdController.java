@@ -25,7 +25,7 @@ public class HouseholdController {
 
     @GetMapping("/{id}")
     @ResponseBody
-    public ResponseEntity<?> getOwnerById(@PathVariable Integer id){
+    public ResponseEntity<?> getHouseholdById(@PathVariable Integer id){
         Optional<Household> optionalHousehold = householdService.getHouseholdById(id);
 
         if(optionalHousehold.isPresent()){

@@ -2,6 +2,7 @@ package hr.apisit.energent.controller;
 
 import hr.apisit.energent.domain.Owner;
 import hr.apisit.energent.domain.ServiceProvider;
+import hr.apisit.energent.exception.EntityNotFoundException;
 import hr.apisit.energent.service.OwnerService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -44,19 +45,24 @@ public class OwnerController {
     @PutMapping("/{id}")
     @ResponseBody
     public ResponseEntity<?> updateOwner(@RequestBody Owner updatedOwner, @PathVariable Integer id){
-        Optional<Owner> updatedOwnerOptional =
-                ownerService.updateOwner(updatedOwner, id);
 
-        if(updatedOwnerOptional.isPresent()){
-            return ResponseEntity.status(HttpStatus.OK).body(updatedOwnerOptional.get());
-        } else {
+        try{
+            Owner newUpdatedOwner = ownerService.updateOwner(updatedOwner, id);
+            return ResponseEntity.status(HttpStatus.OK).body(newUpdatedOwner);
+        }catch (EntityNotFoundException ex) {
             return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
         }
+
+//        if(updatedOwnerOptional.isPresent()){
+//            return ResponseEntity.status(HttpStatus.OK).body(updatedOwnerOptional.get());
+//        } else {
+//            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+//        }
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteOwner(@PathVariable Integer id){
-        ownerService.deleteOwner(id);
+        ownerService.deleteOwner(ownerService.getOwnerById(id).get());
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 

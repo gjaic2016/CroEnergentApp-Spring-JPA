@@ -21,21 +21,23 @@ public class AddressServiceImpl implements AddressService{
 
     @Override
     public Optional<Address> getAddressById(Integer id) {
-        return Optional.empty();
+        return addressRepositoryJpa.findById(id);
+//        return Optional.empty();
     }
 
     @Override
-    public void saveAddress(Address newCity) {
-
+    public void saveAddress(Address newAddress) {
+        addressRepositoryJpa.save(newAddress);
     }
 
     @Override
     public Optional<Address> updateAddress(Address updatedAddress, Integer id) {
+
         return Optional.empty();
     }
 
     @Override
     public void deleteAddress(Integer id) {
-
+        addressRepositoryJpa.deleteById(id);
     }
 }

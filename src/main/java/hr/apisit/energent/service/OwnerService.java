@@ -14,7 +14,9 @@ public interface OwnerService {
 
     void saveOwner(Owner newOwner);
 
-    Optional<Owner> updateOwner(Owner updatedOwner, Integer id);
+    Owner updateOwner(Owner updatedOwner, Integer id);
 
-    void deleteOwner(Integer id);
+//    void deleteOwner(Integer id);
+
+    void deleteOwner(Owner owner);
 }
