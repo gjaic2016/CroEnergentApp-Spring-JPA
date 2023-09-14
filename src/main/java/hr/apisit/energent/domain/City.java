@@ -1,16 +1,15 @@
 package hr.apisit.energent.domain;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 
-//@Getter
-//@Setter
+import java.util.List;
+
 @Entity
 @Table(name="CITY")
 @Data
+
 public class City {
 
     @Id
@@ -23,10 +22,15 @@ public class City {
     @Column(name="city_name")
     private String city_name;
 
-    @ManyToOne
 //    @JsonBackReference
+    @ManyToOne
     @JoinColumn(name = "country_id")
     private Country country;
+
+    @OneToMany
+    @JsonBackReference
+    private List<Address> address;
+
 
     public City(Integer id, String city_zip, String city_name, Country country) {
         this.id = id;
@@ -39,11 +43,4 @@ public class City {
 
     }
 
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-//
-//    public Integer getId() {
-//        return id;
-//    }
 }

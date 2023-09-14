@@ -1,5 +1,6 @@
 package hr.apisit.energent.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -7,6 +8,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.util.List;
 
@@ -24,10 +26,10 @@ public class Country {
     @Column(name="name")
     private String name;
 
-    @OneToMany(mappedBy = "country", cascade = CascadeType.ALL)
-    @JsonManagedReference
+//    @JsonIgnoreProperties("country")
 //    @JsonIgnore
-    @JsonIgnoreProperties("country")
+    @OneToMany(mappedBy = "country", cascade = CascadeType.ALL)
+    @JsonBackReference
     private List<City> cities;
 
     public Country(Integer id, String name) {

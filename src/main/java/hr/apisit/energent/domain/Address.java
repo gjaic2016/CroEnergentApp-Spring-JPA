@@ -1,23 +1,26 @@
 package hr.apisit.energent.domain;
 
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
 
-@Getter
-@Setter
+//@Getter
+//@Setter
+@Entity
+@Table(name = "ADDRESS")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Address {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(name="address")
+//    @JoinColumn(name = "city_id")
     private String address;
 
+    @ManyToOne
     private City city;
-
-    public Address(Integer id, String address, City city) {
-        this.id = id;
-        this.address = address;
-        this.city = city;
-    }
-
 
 }
