@@ -1,5 +1,6 @@
 package hr.apisit.energent.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -9,7 +10,7 @@ import lombok.*;
 @Table(name = "ADDRESS")
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
+
 public class Address {
 
     @Id
@@ -23,4 +24,13 @@ public class Address {
     @ManyToOne
     private City city;
 
+    @OneToOne(mappedBy = "adresa")
+    @JsonIgnore
+    private ServiceProvider provider;
+
+    public Address(Integer id, String address, City city) {
+        this.id = id;
+        this.address = address;
+        this.city = city;
+    }
 }
