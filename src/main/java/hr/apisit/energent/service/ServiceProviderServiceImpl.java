@@ -15,26 +15,21 @@ import java.util.Optional;
 @AllArgsConstructor
 public class ServiceProviderServiceImpl implements ServiceProviderService{
 
-//    private ServiceProviderRepositoryInterface serviceProviderRepositoryInterface;
-
     private ServiceProviderRepositoryJpa serviceProviderRepositoryJpa;
 
     @Override
     public List<ServiceProvider> getAllServiceProviders() {
         return serviceProviderRepositoryJpa.findAll();
-//        return serviceProviderRepositoryInterface.getAllServiceProviders();
     }
 
     @Override
     public ServiceProvider getServiceProviderById(Integer id) {
         return serviceProviderRepositoryJpa.findById(id).get();
-//        return serviceProviderRepositoryInterface.getServiceProviderById(id);
     }
 
     @Override
     public void saveNewServiceProvider(ServiceProvider newServiceProvider) {
         serviceProviderRepositoryJpa.save(newServiceProvider);
-//        serviceProviderRepositoryInterface.saveNewServiceProvide(newServiceProvider);
     }
 
     @Override
@@ -47,8 +42,6 @@ public class ServiceProviderServiceImpl implements ServiceProviderService{
 
             modifiedServiceProvider.setNaziv(serviceProviderToUpdate.getNaziv());
             modifiedServiceProvider.setAdresa(serviceProviderToUpdate.getAdresa());
-            modifiedServiceProvider.setVrstaUsluge(serviceProviderToUpdate.getVrstaUsluge());
-            modifiedServiceProvider.setCijenaUsluge(serviceProviderToUpdate.getCijenaUsluge());
 
             ServiceProvider newUpdatedServiceProvider = serviceProviderRepositoryJpa.save(modifiedServiceProvider);
 
@@ -58,13 +51,11 @@ public class ServiceProviderServiceImpl implements ServiceProviderService{
             throw new EntityNotFoundException("There is no Seat object for ID = '" + originalServiceProviderId + "'");
         }
 
-//         return serviceProviderRepositoryInterface.updateServiceProvider(updatedServiceProvider,id);
     }
 
     @Override
     public void deleteServiceProvider(Integer id) {
         serviceProviderRepositoryJpa.delete(serviceProviderRepositoryJpa.findById(id).get());
-//        serviceProviderRepositoryInterface.deleteServiceProvider(id);
     }
 
 

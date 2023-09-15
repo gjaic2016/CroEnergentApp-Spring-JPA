@@ -104,8 +104,8 @@ public class FileServiceProviderRepository implements ServiceProviderRepositoryI
             if(provider.getId().equals(id)) {
                 provider.setNaziv(updatedServiceProvider.getNaziv());
                 provider.setAdresa(updatedServiceProvider.getAdresa());
-                provider.setVrstaUsluge(updatedServiceProvider.getVrstaUsluge());
-                provider.setCijenaUsluge(updatedServiceProvider.getCijenaUsluge());
+//                provider.setVrstaUsluge(updatedServiceProvider.getVrstaUsluge());
+//                provider.setCijenaUsluge(updatedServiceProvider.getCijenaUsluge());
 
                 updatedServiceProviderOptional = provider;
                 break;

@@ -13,40 +13,31 @@ import java.util.Optional;
 @AllArgsConstructor
 public class HouseholdServiceImpl implements HouseholdService{
 
-
   private HouseholdRepositoryJpa householdRepositoryJpa;
-
-
-//    private HouseholdRepositoryInterface householdRepositoryInterface;
 
     @Override
     public List<Household> getAllHouseholds() {
         return householdRepositoryJpa.findAll();
-//        return householdRepositoryInterface.getAllHouseholds();
     }
 
     @Override
     public Optional<Household> getHouseholdById(Integer id) {
         return householdRepositoryJpa.findById(id);
-//        return householdRepositoryInterface.getHouseholdById(id);
     }
 
     @Override
     public void saveHousehold(Household newHousehold) {
         householdRepositoryJpa.save(newHousehold);
-//        householdRepositoryInterface.saveNewHousehold(newHousehold);
     }
 
     @Override
     public Optional<Household> updateHousehold(Household updatedHousehold, Integer id) {
         //????
         return Optional.of(householdRepositoryJpa.save(updatedHousehold));
-//        return householdRepositoryInterface.updateHousehold(updatedHousehold, id);
     }
 
     @Override
     public void deleteHousehold(Household household) {
         householdRepositoryJpa.delete(household);
-//        householdRepositoryInterface.deleteHousehold(id);
     }
 }

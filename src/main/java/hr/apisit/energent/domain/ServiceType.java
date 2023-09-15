@@ -22,9 +22,9 @@ public class ServiceType {
     @Column(name = "NAME")
     private String naziv;
 
-    @OneToOne(mappedBy = "vrstaUsluge")
-    @JsonIgnore
-    private ServiceProvider serviceProvider;
+//    @OneToOne(mappedBy = "vrstaUsluge")
+//    @JsonIgnore
+//    private ServiceProvider serviceProvider;
 
     public ServiceType(Integer id, String naziv) {
         this.id = id;

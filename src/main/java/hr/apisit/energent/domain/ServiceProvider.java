@@ -30,18 +30,18 @@ public class ServiceProvider {
     private Address adresa;
 
 
-    @OneToOne
-    @JoinColumn(name = "service_type_id")
-    private ServiceType vrstaUsluge;
+//    @OneToOne
+//    @JoinColumn(name = "service_type_id")
+//    private ServiceType vrstaUsluge;
 
-    @Column(name = "PRICE")
-    private BigDecimal cijenaUsluge;
+//    @Column(name = "PRICE")
+//    private BigDecimal cijenaUsluge;
 
-    public ServiceProvider(Integer id, String naziv, Address adresa, ServiceType vrstaUsluge, BigDecimal cijenaUsluge) {
+    public ServiceProvider(Integer id, String naziv, Address adresa) {
         this.id = id;
         this.naziv = naziv;
         this.adresa = adresa;
-        this.vrstaUsluge = vrstaUsluge;
-        this.cijenaUsluge = cijenaUsluge;
+//        this.vrstaUsluge = vrstaUsluge;
+//        this.cijenaUsluge = cijenaUsluge;
     }
 }

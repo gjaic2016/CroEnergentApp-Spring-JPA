@@ -14,27 +14,21 @@ import java.util.Optional;
 @AllArgsConstructor
 public class OwnerServiceImpl implements OwnerService{
 
-
-//    private OwnerRepositoryInterface ownerRepositoryInterface;
-
     private OwnerRepositoryJpa ownerRepositoryJpa;
 
     @Override
     public List<Owner> getAllOwners() {
         return ownerRepositoryJpa.findAll();
-//        return ownerRepositoryInterface.getAllOwners();
     }
 
     @Override
     public Optional<Owner> getOwnerById(Integer id) {
         return ownerRepositoryJpa.findById(id);
-//        return ownerRepositoryInterface.getOwnerById(id);
     }
 
     @Override
     public void saveOwner(Owner newOwner) {
         ownerRepositoryJpa.save(newOwner);
-//        ownerRepositoryInterface.saveNewOwner(newOwner);
     }
 
     @Override
@@ -57,16 +51,7 @@ public class OwnerServiceImpl implements OwnerService{
         else {
             throw new EntityNotFoundException("There is no Seat object for ID = '" + originalOwnerId + "'");
         }
-
-//        return Optional.of(ownerRepositoryJpa.save(ownerToUpdate));
-//        return ownerRepositoryInterface.updateOwner(ownerToUpdate, originalOwnerId);
     }
-
-//    @Override
-//    public void deleteOwner(Integer id) {
-//          ownerRepositoryInterface.deleteOwner(id);
-//    }
-
 
     @Override
     public void deleteOwner(Owner owner) {

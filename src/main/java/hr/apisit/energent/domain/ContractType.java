@@ -1,17 +1,24 @@
 package hr.apisit.energent.domain;
 
-public enum ContractType {
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-    FIXED("FIXED"),
-    INDEFINITE("INDEFINITE");
+@Entity
+@Table(name = "CONTRACT_TYPE")
+@Data
+@NoArgsConstructor
+public class ContractType {
 
-    private String contractType;
+    @Id
+    @GeneratedValue(strategy =  GenerationType.IDENTITY)
+    private Integer id;
 
-    ContractType(String contractType) {
-        this.contractType=contractType;
-    }
+    @Column(name = "NAME")
+    private String name;
 
-    public String getContractType() {
-        return contractType;
+    public ContractType(Integer id, String name) {
+        this.id = id;
+        this.name = name;
     }
 }
