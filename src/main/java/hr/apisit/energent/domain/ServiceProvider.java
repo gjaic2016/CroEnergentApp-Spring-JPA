@@ -29,7 +29,6 @@ public class ServiceProvider {
     @JoinColumn(name = "address_id")
     private Address adresa;
 
-
 //    @OneToOne
 //    @JoinColumn(name = "service_type_id")
 //    private ServiceType vrstaUsluge;
@@ -41,7 +40,5 @@ public class ServiceProvider {
         this.id = id;
         this.naziv = naziv;
         this.adresa = adresa;
-//        this.vrstaUsluge = vrstaUsluge;
-//        this.cijenaUsluge = cijenaUsluge;
     }
 }

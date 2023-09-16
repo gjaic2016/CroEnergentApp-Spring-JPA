@@ -1,7 +1,6 @@
 package hr.apisit.energent.service;
 
 import hr.apisit.energent.domain.Owner;
-import hr.apisit.energent.domain.ServiceProvider;
 
 import java.util.List;
 import java.util.Optional;
