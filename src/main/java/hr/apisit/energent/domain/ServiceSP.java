@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 @Table(name="SERVICE")
 @Data
 @NoArgsConstructor
-public class Service {
+public class ServiceSP {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,7 +29,7 @@ public class Service {
 
     //List<Contract> contracts;
 
-    public Service(Integer id, ServiceProvider serviceProvider, ServiceType serviceType, BigDecimal price) {
+    public ServiceSP(Integer id, ServiceProvider serviceProvider, ServiceType serviceType, BigDecimal price) {
         this.id = id;
         this.serviceProvider = serviceProvider;
         this.serviceType = serviceType;

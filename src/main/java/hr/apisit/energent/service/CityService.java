@@ -10,7 +10,6 @@ public interface CityService{
 
     List<City> getAllCities();
 
-
     Optional<City> getCityById(Integer id);
 
     void saveCity(City newCity);
