@@ -1,7 +1,7 @@
 package hr.apisit.energent.service;
 
 import hr.apisit.energent.domain.Contract;
-import hr.apisit.energent.repository.ContractRepositoryInterface;
+import hr.apisit.energent.jpaRepository.ContractRepositoryJpa;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -10,32 +10,34 @@ import java.util.Optional;
 
 @Service
 @AllArgsConstructor
-public class ContractServiceImpl implements ContractService{
+public class ContractServiceImpl implements ContractService {
 
-    private ContractRepositoryInterface contractRepositoryInterface;
+    private ContractRepositoryJpa contractRepositoryJpa;
 
     @Override
     public List<Contract> getAllContracts() {
-        return contractRepositoryInterface.getAllContracts();
+        return contractRepositoryJpa.findAll();
     }
 
     @Override
     public Optional<Contract> getContractById(Integer id) {
-        return contractRepositoryInterface.getContractById(id);
+        return contractRepositoryJpa.findById(id);
     }
 
     @Override
     public void saveContract(Contract newContract) {
-        contractRepositoryInterface.saveNewcontract(newContract);
+        contractRepositoryJpa.save(newContract);
     }
 
     @Override
     public Optional<Contract> updateContract(Contract updatedContract, Integer id) {
-        return contractRepositoryInterface.updateContract(updatedContract, id);
+        //TODO contract update
+//        return contractRepositoryInterface.updateContract(updatedContract, id);
+        return null;
     }
 
     @Override
     public void deleteContract(Integer id) {
-        contractRepositoryInterface.deleteContract(id);
+        contractRepositoryJpa.delete(getContractById(id).get());
     }
 }
