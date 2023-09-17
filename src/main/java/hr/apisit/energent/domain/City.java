@@ -21,10 +21,14 @@ public class City {
     @Column(name="city_name")
     private String city_name;
 
-//    @JsonBackReference
+
     @ManyToOne
     @JoinColumn(name = "country_id")
     private Country country;
+
+//    @ManyToOne
+//    @JsonBackReference
+//    private Country country;
 
     @OneToMany
     @JsonBackReference

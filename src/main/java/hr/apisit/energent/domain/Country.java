@@ -28,9 +28,15 @@ public class Country {
 
 //    @JsonIgnoreProperties("country")
 //    @JsonIgnore
+
     @OneToMany(mappedBy = "country", cascade = CascadeType.ALL)
     @JsonBackReference
     private List<City> cities;
+
+//    @OneToMany(cascade = CascadeType.ALL)
+//    @JoinColumn(name="city_id")
+//    private List<City> cities;
+
 
     public Country(Integer id, String name) {
         this.id = id;

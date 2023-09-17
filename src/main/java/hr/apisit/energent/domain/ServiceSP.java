@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
 @Table(name="SERVICE")
@@ -27,7 +28,8 @@ public class ServiceSP {
     @Column(name="price")
     private BigDecimal price;
 
-    //List<Contract> contracts;
+//    @OneToMany(fetch = FetchType.LAZY)
+//    List<Contract> contracts;
 
     public ServiceSP(Integer id, ServiceProvider serviceProvider, ServiceType serviceType, BigDecimal price) {
         this.id = id;
