@@ -1,7 +1,6 @@
 package hr.apisit.energent.controller;
 
 import hr.apisit.energent.domain.ServiceProvider;
-import hr.apisit.energent.domain.ServiceType2;
 import hr.apisit.energent.utility.JsonUtils;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;

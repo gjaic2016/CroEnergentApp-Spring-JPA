@@ -29,8 +29,8 @@ public class ContractControllerTest {
 
 //    @Test
 //    @Order(1)
-//    public void returnAllContractsFromFile() throws Exception {
-//        final int CONTRACTS_SIZE = 5;
+//    public void returnAllContractsFromDB() throws Exception {
+//        final int CONTRACTS_SIZE = 6;
 //
 //        this.mockMvc.perform(get("/energent/contract"))
 //                .andExpect(status().isOk())

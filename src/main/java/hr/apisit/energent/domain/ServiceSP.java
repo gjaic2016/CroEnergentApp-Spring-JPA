@@ -1,16 +1,17 @@
 package hr.apisit.energent.domain;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 @Entity
 @Table(name="SERVICE")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class ServiceSP {
 
     @Id
@@ -28,10 +29,4 @@ public class ServiceSP {
     @Column(name="price")
     private BigDecimal price;
 
-    public ServiceSP(Integer id, ServiceProvider serviceProvider, ServiceType serviceType, BigDecimal price) {
-        this.id = id;
-        this.serviceProvider = serviceProvider;
-        this.serviceType = serviceType;
-        this.price = price;
-    }
 }

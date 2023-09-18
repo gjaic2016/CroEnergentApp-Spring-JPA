@@ -7,8 +7,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
-//@Getter
-//@Setter
 @Entity
 @Table(name = "OWNER")
 @Data
@@ -35,14 +33,5 @@ public class Owner {
     @ManyToMany(mappedBy = "vlasnik")
     @JsonIgnore
     private List<Household> householdList;
-
-
-//    public Owner(Integer id, String ime, String prezime, LocalDate datumRodenja, String oib) {
-//        this.id = id;
-//        this.ime = ime;
-//        this.prezime = prezime;
-//        this.datumRodenja = datumRodenja;
-//        this.oib = oib;
-//    }
 
 }

@@ -1,6 +1,7 @@
 package hr.apisit.energent.domain;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -8,6 +9,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "CONTRACT_TYPE")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class ContractType {
 
     @Id
@@ -17,8 +19,4 @@ public class ContractType {
     @Column(name = "NAME")
     private String name;
 
-    public ContractType(Integer id, String name) {
-        this.id = id;
-        this.name = name;
-    }
 }

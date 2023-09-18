@@ -5,10 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.List;
 
@@ -17,6 +14,8 @@ import java.util.List;
 @Entity
 @Table(name="COUNTRY")
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Country {
 
     @Id
@@ -37,13 +36,4 @@ public class Country {
 //    @JoinColumn(name="city_id")
 //    private List<City> cities;
 
-
-    public Country(Integer id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
-    public Country() {
-
-    }
 }

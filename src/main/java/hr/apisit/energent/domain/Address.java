@@ -4,13 +4,11 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
-//@Getter
-//@Setter
 @Entity
 @Table(name = "ADDRESS")
 @Data
 @NoArgsConstructor
-
+@AllArgsConstructor
 public class Address {
 
     @Id
@@ -18,7 +16,6 @@ public class Address {
     private Integer id;
 
     @Column(name="address")
-//    @JoinColumn(name = "city_id")
     private String address;
 
     @ManyToOne
@@ -28,9 +25,4 @@ public class Address {
     @JsonIgnore
     private ServiceProvider provider;
 
-    public Address(Integer id, String address, City city) {
-        this.id = id;
-        this.address = address;
-        this.city = city;
-    }
 }

@@ -9,6 +9,8 @@ import java.util.List;
 @Entity
 @Table(name="CITY")
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class City {
 
     @Id
@@ -34,16 +36,11 @@ public class City {
     @JsonBackReference
     private List<Address> address;
 
-
-    public City(Integer id, String city_zip, String city_name, Country country) {
-        this.id = id;
-        this.city_zip = city_zip;
-        this.city_name = city_name;
-        this.country = country;
-    }
-
-    public City() {
-
-    }
+//    public City(Integer id, String city_zip, String city_name, Country country) {
+//        this.id = id;
+//        this.city_zip = city_zip;
+//        this.city_name = city_name;
+//        this.country = country;
+//    }
 
 }

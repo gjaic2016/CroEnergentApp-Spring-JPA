@@ -2,17 +2,13 @@ package hr.apisit.energent.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-//@Getter
-//@Setter
 @Entity
 @Table(name = "SERVICE_TYPE")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class ServiceType {
 
     @Id
@@ -26,8 +22,8 @@ public class ServiceType {
 //    @JsonIgnore
 //    private ServiceProvider serviceProvider;
 
-    public ServiceType(Integer id, String naziv) {
-        this.id = id;
-        this.naziv = naziv;
-    }
+//    public ServiceType(Integer id, String naziv) {
+//        this.id = id;
+//        this.naziv = naziv;
+//    }
 }

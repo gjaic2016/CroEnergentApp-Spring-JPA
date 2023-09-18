@@ -5,13 +5,11 @@ import lombok.*;
 
 import java.util.List;
 
-//@Getter
-//@Setter
-//@ToString
 @Entity
 @Table(name = "HOUSEHOLD")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class Household  {
 
     @Id
@@ -28,11 +26,5 @@ public class Household  {
             inverseJoinColumns = @JoinColumn (name = "OWNER_ID")
     )
     private List<Owner> vlasnik;
-
-    public Household(Integer id, String adresa, List<Owner> vlasnik) {
-        this.id = id;
-        this.adresa = adresa;
-        this.vlasnik = vlasnik;
-    }
 
 }
