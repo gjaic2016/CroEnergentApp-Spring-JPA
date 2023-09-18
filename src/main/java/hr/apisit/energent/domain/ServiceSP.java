@@ -28,9 +28,6 @@ public class ServiceSP {
     @Column(name="price")
     private BigDecimal price;
 
-//    @OneToMany(fetch = FetchType.LAZY)
-//    List<Contract> contracts;
-
     public ServiceSP(Integer id, ServiceProvider serviceProvider, ServiceType serviceType, BigDecimal price) {
         this.id = id;
         this.serviceProvider = serviceProvider;

@@ -37,6 +37,10 @@ public class Contract {
     @Column(name="end_date")
     private LocalDate end_date;
 
+//    @Column(name = "STATUS")
+//    @Enumerated(EnumType.STRING)
+//    private Status status;
+
 
     public Contract(Integer id, ContractType contractType, Household household, ServiceSP serviceSP, LocalDate start_date, LocalDate end_date) {
         this.id = id;
