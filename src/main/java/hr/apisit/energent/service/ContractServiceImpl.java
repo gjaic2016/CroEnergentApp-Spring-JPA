@@ -1,7 +1,6 @@
 package hr.apisit.energent.service;
 
 import hr.apisit.energent.domain.Contract;
-import hr.apisit.energent.domain.Owner;
 import hr.apisit.energent.exception.EntityNotFoundException;
 import hr.apisit.energent.jpaRepository.ContractRepositoryJpa;
 import lombok.AllArgsConstructor;

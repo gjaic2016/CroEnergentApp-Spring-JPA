@@ -1,10 +1,8 @@
 package hr.apisit.energent.service;
 
-import hr.apisit.energent.domain.Owner;
 import hr.apisit.energent.domain.ServiceProvider;
 import hr.apisit.energent.exception.EntityNotFoundException;
 import hr.apisit.energent.jpaRepository.ServiceProviderRepositoryJpa;
-import hr.apisit.energent.repository.ServiceProviderRepositoryInterface;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -2,7 +2,6 @@ package hr.apisit.energent.service;
 
 import hr.apisit.energent.domain.Household;
 import hr.apisit.energent.jpaRepository.HouseholdRepositoryJpa;
-import hr.apisit.energent.repository.HouseholdRepositoryInterface;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
