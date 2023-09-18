@@ -62,4 +62,9 @@ public class ServiceProviderController {
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
+    @GetMapping("/serviceProviderWithEndDateNull")
+    public ResponseEntity<?> getServiceProviderWithEndDateNull(){
+        return ResponseEntity.status(HttpStatus.OK).body(serviceProviderService.getServiceProviderWithEndDateNull());
+    }
+
 }

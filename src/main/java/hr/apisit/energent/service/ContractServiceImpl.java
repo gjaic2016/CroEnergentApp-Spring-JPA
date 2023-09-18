@@ -1,6 +1,8 @@
 package hr.apisit.energent.service;
 
 import hr.apisit.energent.domain.Contract;
+import hr.apisit.energent.domain.Owner;
+import hr.apisit.energent.exception.EntityNotFoundException;
 import hr.apisit.energent.jpaRepository.ContractRepositoryJpa;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -30,10 +32,31 @@ public class ContractServiceImpl implements ContractService {
     }
 
     @Override
-    public Optional<Contract> updateContract(Contract updatedContract, Integer id) {
+    public Optional<Contract> updateContract(Contract contractToUpdate, Integer originalContractId) {
         //TODO contract update
 //        return contractRepositoryInterface.updateContract(updatedContract, id);
-        return null;
+
+        Optional<Contract> modifiedContractOptional = contractRepositoryJpa.findById(originalContractId);
+
+        if(modifiedContractOptional.isPresent()) {
+            Contract modifiedContract = modifiedContractOptional.get();
+
+            modifiedContract.setContractType(contractToUpdate.getContractType());
+            modifiedContract.setHousehold(contractToUpdate.getHousehold());
+            modifiedContract.setServiceSP(contractToUpdate.getServiceSP());
+            modifiedContract.setStart_date(contractToUpdate.getStart_date());
+            modifiedContract.setEnd_date(contractToUpdate.getEnd_date());
+
+            Optional<Contract> newUpdatedContract = Optional.of(contractRepositoryJpa.save(modifiedContract));
+
+            return newUpdatedContract;
+        }
+        else {
+            throw new EntityNotFoundException("There is no Owner object for ID = '" + originalContractId + "'");
+        }
+
+
+//        return null;
     }
 
     @Override

@@ -58,5 +58,8 @@ public class ServiceProviderServiceImpl implements ServiceProviderService{
         serviceProviderRepositoryJpa.delete(serviceProviderRepositoryJpa.findById(id).get());
     }
 
-
+    @Override
+    public List<ServiceProvider> getServiceProviderWithEndDateNull() {
+        return serviceProviderRepositoryJpa.getContractOfServiceProviderWithEndDateNull();
+    }
 }

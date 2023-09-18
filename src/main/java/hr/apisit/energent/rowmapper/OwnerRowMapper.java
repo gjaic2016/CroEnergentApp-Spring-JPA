@@ -23,7 +23,8 @@ public class OwnerRowMapper implements RowMapper<Owner> {
         LocalDate localDatRod = datumRodenja.toLocalDate();
         String oib = rs.getString("OIB");
 
-        Owner owner = new Owner(id,ime, prezime, localDatRod, oib);
-        return owner;
+//        Owner owner = new Owner(id,ime, prezime, localDatRod, oib);
+//        return owner;
+        return null;
     }
 }

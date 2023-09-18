@@ -18,4 +18,6 @@ public interface ServiceProviderService {
 
     void deleteServiceProvider(Integer id);
 
+    List<ServiceProvider> getServiceProviderWithEndDateNull();
+
 }

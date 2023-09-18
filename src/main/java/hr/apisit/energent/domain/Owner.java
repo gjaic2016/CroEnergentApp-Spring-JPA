@@ -1,12 +1,11 @@
 package hr.apisit.energent.domain;
 
 import java.time.LocalDate;
+import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 //@Getter
 //@Setter
@@ -14,6 +13,7 @@ import lombok.Setter;
 @Table(name = "OWNER")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class Owner {
 
     @Id
@@ -32,12 +32,17 @@ public class Owner {
     @Column(name = "OIB")
     private String oib;
 
-    public Owner(Integer id, String ime, String prezime, LocalDate datumRodenja, String oib) {
-        this.id = id;
-        this.ime = ime;
-        this.prezime = prezime;
-        this.datumRodenja = datumRodenja;
-        this.oib = oib;
-    }
+    @ManyToMany(mappedBy = "vlasnik")
+    @JsonIgnore
+    private List<Household> householdList;
+
+
+//    public Owner(Integer id, String ime, String prezime, LocalDate datumRodenja, String oib) {
+//        this.id = id;
+//        this.ime = ime;
+//        this.prezime = prezime;
+//        this.datumRodenja = datumRodenja;
+//        this.oib = oib;
+//    }
 
 }

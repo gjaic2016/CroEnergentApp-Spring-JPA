@@ -13,6 +13,7 @@ import java.time.LocalDate;
 @Data
 @ToString
 @NoArgsConstructor
+@AllArgsConstructor
 public class Contract {
 
     @Id
@@ -31,23 +32,24 @@ public class Contract {
     @JoinColumn(name = "SERVICE_ID")
     private ServiceSP serviceSP;
 
+
     @Column(name="start_date")
     private LocalDate start_date;
 
     @Column(name="end_date")
     private LocalDate end_date;
 
-//    @Column(name = "STATUS")
-//    @Enumerated(EnumType.STRING)
-//    private Status status;
+    @Column(name = "STATUS")
+    @Enumerated(EnumType.STRING)
+    private Status status;
 
 
-    public Contract(Integer id, ContractType contractType, Household household, ServiceSP serviceSP, LocalDate start_date, LocalDate end_date) {
-        this.id = id;
-        this.contractType = contractType;
-        this.household = household;
-        this.serviceSP = serviceSP;
-        this.start_date = start_date;
-        this.end_date = end_date;
-    }
+//    public Contract(Integer id, ContractType contractType, Household household, ServiceSP serviceSP, LocalDate start_date, LocalDate end_date) {
+//        this.id = id;
+//        this.contractType = contractType;
+//        this.household = household;
+//        this.serviceSP = serviceSP;
+//        this.start_date = start_date;
+//        this.end_date = end_date;
+//    }
 }

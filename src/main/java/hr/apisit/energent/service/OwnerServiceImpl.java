@@ -49,7 +49,7 @@ public class OwnerServiceImpl implements OwnerService{
             return newUpdatedOwner;
         }
         else {
-            throw new EntityNotFoundException("There is no Seat object for ID = '" + originalOwnerId + "'");
+            throw new EntityNotFoundException("There is no Owner object for ID = '" + originalOwnerId + "'");
         }
     }
 

@@ -21,7 +21,7 @@ public class Household  {
     @Column(name = "ADDRESS")
     private String adresa;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.MERGE)
     @JoinTable(
             name = "HOUSEHOLD_OWNER",
             joinColumns = @JoinColumn(name = "HOUSEHOLD_ID"),
